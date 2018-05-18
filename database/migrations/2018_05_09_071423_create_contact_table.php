@@ -14,15 +14,17 @@ class CreateContactTable extends Migration
     public function up()
     {
         Schema::create('contacts', function (Blueprint $table) {
-            $table->increments('id');            
+            $table->increments('id');          
+            $table->string('cif', 15); 
             $table->string('razon_social', 100);
-            $table->string('cif', 15);
-            $table->string('codigo_postal', 11);
-            $table->string('poblacion', 50);
-            $table->string('direccion', 100);
-            $table->string('telefono', 15);
-            $table->string('email', 100);
             $table->string('persona_contacto', 50);
+            $table->string('email', 100);
+            $table->string('telefono', 15);
+            $table->string('direccion', 100);        
+            $table->string('poblacion', 50);     
+            $table->string('codigo_postal', 11);    
+            $table->boolean('solicita_comercial');
+            $table->boolean('autoriza_email');
             $table->ipAddress('ip');
             $table->timestamps();
         });

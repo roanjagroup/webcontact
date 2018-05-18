@@ -14,7 +14,7 @@ class AddProvinciaIdToContact extends Migration
     public function up()
     {
         Schema::table('contacts', function (Blueprint $table) { 
-            $table->unsignedInteger('provincia_id')->after('persona_contacto');
+            $table->unsignedInteger('provincia_id')->after('codigo_postal');
             $table->foreign('provincia_id')->references('id')->on('provincias');
         });
     }
